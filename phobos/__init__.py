@@ -158,8 +158,7 @@ def register():
         from . import core
         from . import geometry
         from . import utils
-        from . import ci
-        # from . import scripts
+        # CI/CLI modules are not part of the Blender extension distribution.
 
         # Recursively import all submodules
         from . import blender
@@ -271,8 +270,7 @@ if BPY_AVAILABLE:
         from . import core
         from . import geometry
         from . import utils
-        from . import ci
-        from . import scripts
+        # CI/CLI modules are not part of the Blender extension distribution.
         check_requirements(optional=True, upgrade_pip=False, extra=False, install=False)
     except ImportError as e:
         # this is the first installation in blender so we check the requirements
@@ -285,7 +283,6 @@ else:
         from . import core
         from . import geometry
         from . import utils
-        from . import ci
-        from . import scripts
+        # CI/CLI modules are not part of the Blender extension distribution.
 
 del sys

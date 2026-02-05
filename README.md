@@ -6,8 +6,8 @@
 
 ![Phobos](https://github.com/dfki-ric/phobos/wiki/img/phobos_logo_small.png)
 
-Phobos is both a CLI tool and add-on for the open-source 3D modeling software
-[Blender v3.3LTS](https://www.blender.org/download/lts/3-3/) to support your robot model creation and editing.
+Phobos is a Blender add-on (Blender Extension) for the open-source 3D modeling software
+[Blender](https://www.blender.org/) to support your robot model creation and editing.
 
 The Blender add-on enables the creation of WYSIWYG robot
 models for use in robot frameworks like [ROS](http://wiki.ros.org/) and
@@ -29,7 +29,7 @@ for any inquiries, or any questions and feedback not suited for the issues
 page.
 
 ## Version 2.0.0
-With version 2.0.0 we did a refactoring of Phobos and its now possible to use phobos as a normal python package and command line tool (see below).
+With version 2.0.0 we did a refactoring of Phobos to improve the Blender add-on experience.
 
 When running the new Phobos on a model created with an older version of Phobos, make sure to have a backup.
 For most cases you should be able to update your model by simply exporting it to smurf and then importing it again from that smurf file.
@@ -60,51 +60,20 @@ When citing, please provide this information:
 
 If you are on the hunt for a BiBTeX entry, check out the [FAQ section](https://github.com/dfki-ric/phobos/wiki/FAQ#how-do-i-cite-phobos).
 
-## Installation
+## Installation (Blender Extension)
 
-### Blender
->UPDATING: If you already have phobos installed and want to update.
-> You have to remove the old version of Phobos first and close Blender.
-> Then proceed with the installation steps explained below.
+Phobos is distributed as a Blender Extension. Install the extension zip in Blender:
 
->NOTE (WINDOWS): If you are using blender under Windows, make sure you have the latest version of [Microsoft Visual C++ Redistributable](https://learn.microsoft.com/en-US/cpp/windows/latest-supported-vc-redist?view=msvc-170) installed.  Otherwise Blender's python won't work properly.
+1. Open Blender.
+2. Go to `Edit -> Preferences -> Extensions`.
+3. Choose `Install from Disk` and select the Phobos extension zip.
+4. Enable the extension.
+5. Restart Blender if prompted.
 
-To install Phobos in blender download the phobos.zip of the release or zip the phobos subdirectory (e.g. `zip -r phobos.zip phobos`)
-Phobos has several python dependencies, those have to be installed in blender before you can use phobos.
-There are two ways of installing Phobos:
-
-- Recommended:
-  1. Directly install the phobos.zip in blender: `Blender->Edit->Preferences->Addons->Install` and activate it.
-  2. Restart Blender.
-  3. Activate Phobos Add-on again.
-- (Offers inspection of the requirements before installing them) Before installing the phobos.zip you can run the script install_requirements.py with blender's python.
-  1. ```bash
-     ${BLENDER_EXECUTABLE} -b --python install_requirements.py
-     ```
-  2. Install the phobos.zip in blender: `Blender->Edit->Preferences->Addons->Install` and activate it.
-
-After installation the phobos main menu can be found on the right hand side of the 3D Viewport.
+After installation the Phobos main menu can be found on the right hand side of the 3D Viewport.
 If not already visible, one can find a very small arrow to open the Blender toolbar (purple circle showing it in the image).
 
 ![Small arrow to open the phobos toolbar widget.](https://github.com/dfki-ric/phobos/wiki/img/blender_phobos_menu_open.png)
-
-Phobos is currently tested and running with Blender v3.3 LTS.
-
-### CLI
-Install the requirements by executing `install_requirements.py` with the python you want to install phobos to:
-```bash
-cd phobos
-python3 install_requirements.py
-```
-
-Then just install it using pip:
-```bash
-cd phobos
-pip install .
-```
-or with autoproj:
-1) Add the package to your buildconf/package_set
-2) Install via `amake`
 
 ## Overview
 
@@ -142,10 +111,7 @@ avoiding confusion or obstruction of view when editing very complex models.*
 
 ### CLI
 
-You can either use CLI-phobos as a normal python package or use the scripts provided with it.
-
-For the latter do `phobos --help` to get a list of the currently available scripts.
-It will also tell you which dependencies are missing for some scripts.
+The CLI packaging has been removed in this extension-only distribution.
 
 ## Features
 

@@ -1,0 +1,11 @@
+schema_version = "1.0.0"
+id = "phobos"
+version = "2.0.0"
+name = "Phobos"
+tagline = "Robot model creation and editing tools for Blender"
+maintainer = "Henning Wiedemann <henning.wiedemann@dfki.de>"
+type = "add-on"
+website = "https://github.com/dfki-ric/phobos"
+tags = ["Modeling", "Import-Export", "Development"]
+blender_version_min = "4.0.0"
+license = ["BSD-3-Clause"]
