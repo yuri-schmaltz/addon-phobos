@@ -11,5 +11,6 @@ doc/_build
 *.egg-info
 *.egg
 *_wip**
+.mypy_cache
 tests/api/test_data/.temp**
 *.zip
