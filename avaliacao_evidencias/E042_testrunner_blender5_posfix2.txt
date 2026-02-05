@@ -1,0 +1,243 @@
+Looking in links: c:\Users\u60897\AppData\Local\Temp\tmpvky5_4c9
+Requirement already satisfied: setuptools in c:\blender\5.0\python\lib\site-packages (63.2.0)
+Requirement already satisfied: pip in c:\blender\5.0\python\lib\site-packages (26.0.1)
+00:03.781  blend            | Read blend: "C:\Users\u60897\Documents\addon-phobos\tests\basics\basics.test.blend"
+00:03.781  blend.doversion  | WARNING Region type 4 missing in space type "Info" (id: 7) - removing region
+Parsing definitions from: C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\data\blender\definitions
+  defaultControllers.yml
+  defaultJoints.yml
+  defaultMaterials.yml
+  defaultMotors.yml
+  defaultSensors.yml
+  defaultSubmechanisms.yml
+Creating new definition type: joints
+Creating new definition type: motors
+Checking requirements:
+  Checking yaml
+  Checking numpy
+  Checking scipy
+  Checking pkg_resources
+  Checking collada
+  Checking pydot
+  Checking lxml
+  Checking networkx
+  Checking trimesh
+  Checking PIL
+Importing phobos
+RELOAD:  phobos.blender.defs
+Parsing definitions from: C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\data\blender\definitions
+  defaultControllers.yml
+  defaultJoints.yml
+  defaultMaterials.yml
+  defaultMotors.yml
+  defaultSensors.yml
+  defaultSubmechanisms.yml
+Creating new definition type: joints
+Creating new definition type: motors
+RELOAD:  phobos.blender.display
+RELOAD:  phobos.blender.io
+RELOAD:  phobos.blender.model
+RELOAD:  phobos.blender.operators
+RELOAD:  phobos.blender.phobosgui
+RELOAD:  phobos.blender.phoboslog
+RELOAD:  phobos.blender.phobossystem
+RELOAD:  phobos.blender.reserved_keys
+RELOAD:  phobos.blender.utils
+Registering operators.selection... 
+Registering operators.io...
+Registering operators.editing...
+Registering operators.naming...
+Registering operators.misc...
+
+Registering phobosgui...
+[20260205_14:11:19] [1m[92mINFO[0m Compiling mechanism list from local library...[2m (C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\blender\model\mechanisms.py - compileMechanismList (l53))[0m
+[20260205_14:11:19] [1m[35mDEBUG[0m Adding mechanism preview: C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\data\blender\images\mechanisms\revolute.png[2m (C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\blender\model\mechanisms.py - compileMechanismList (l76))[0m
+[20260205_14:11:19] [1m[35mDEBUG[0m Adding mechanism preview: C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\data\blender\images\mechanisms\universal.png[2m (C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\blender\model\mechanisms.py - compileMechanismList (l76))[0m
+[20260205_14:11:19] [1m[35mDEBUG[0m Adding mechanism preview: C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\data\blender\images\mechanisms\spherical.png[2m (C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\blender\model\mechanisms.py - compileMechanismList (l76))[0m
+[20260205_14:11:19] [1m[35mDEBUG[0m Adding mechanism preview: C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\data\blender\images\mechanisms\lambda_mechanism.png[2m (C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\blender\model\mechanisms.py - compileMechanismList (l76))[0m
+[20260205_14:11:19] [1m[35mDEBUG[0m Adding mechanism preview: C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\data\blender\images\mechanisms\2SPRR+1U.png[2m (C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\blender\model\mechanisms.py - compileMechanismList (l76))[0m
+[20260205_14:11:19] [1m[35mDEBUG[0m Adding mechanism preview: C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\data\blender\images\mechanisms\2SPU+1U.png[2m (C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\blender\model\mechanisms.py - compileMechanismList (l76))[0m
+  ... successful.
+
+----------------------------------------------------------------------------------------------------
+Unregistering Phobos...
+Unregistering phobosgui...
+Unregistering display...
+Unregistering icons...
+Unregistering classes...
+Unregistering manuals...
+  ... successful.
+Blender 5.0.0 (hash a37564c4df7a built 2025-11-18 11:06:54)
+
+Blender quit
+Looking in links: c:\Users\u60897\AppData\Local\Temp\tmpi48ci_ji
+Requirement already satisfied: setuptools in c:\blender\5.0\python\lib\site-packages (63.2.0)
+Requirement already satisfied: pip in c:\blender\5.0\python\lib\site-packages (26.0.1)
+00:03.859  blend            | Read blend: "C:\Users\u60897\Documents\addon-phobos\tests\testmodel\testmodel.test.blend"
+00:03.859  blend.doversion  | WARNING Region type 4 missing in space type "Info" (id: 7) - removing region
+Parsing definitions from: C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\data\blender\definitions
+  defaultControllers.yml
+  defaultJoints.yml
+  defaultMaterials.yml
+  defaultMotors.yml
+  defaultSensors.yml
+  defaultSubmechanisms.yml
+Creating new definition type: joints
+Creating new definition type: motors
+Checking requirements:
+  Checking yaml
+  Checking numpy
+  Checking scipy
+  Checking pkg_resources
+  Checking collada
+  Checking pydot
+  Checking lxml
+  Checking networkx
+  Checking trimesh
+  Checking PIL
+Importing phobos
+RELOAD:  phobos.blender.defs
+Parsing definitions from: C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\data\blender\definitions
+  defaultControllers.yml
+  defaultJoints.yml
+  defaultMaterials.yml
+  defaultMotors.yml
+  defaultSensors.yml
+  defaultSubmechanisms.yml
+Creating new definition type: joints
+Creating new definition type: motors
+RELOAD:  phobos.blender.display
+RELOAD:  phobos.blender.io
+RELOAD:  phobos.blender.model
+RELOAD:  phobos.blender.operators
+RELOAD:  phobos.blender.phobosgui
+RELOAD:  phobos.blender.phoboslog
+RELOAD:  phobos.blender.phobossystem
+RELOAD:  phobos.blender.reserved_keys
+RELOAD:  phobos.blender.utils
+Registering operators.selection... 
+Registering operators.io...
+Registering operators.editing...
+Registering operators.naming...
+Registering operators.misc...
+
+Registering phobosgui...
+[20260205_14:11:23] [1m[92mINFO[0m Compiling mechanism list from local library...[2m (C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\blender\model\mechanisms.py - compileMechanismList (l53))[0m
+[20260205_14:11:23] [1m[35mDEBUG[0m Adding mechanism preview: C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\data\blender\images\mechanisms\revolute.png[2m (C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\blender\model\mechanisms.py - compileMechanismList (l76))[0m
+[20260205_14:11:23] [1m[35mDEBUG[0m Adding mechanism preview: C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\data\blender\images\mechanisms\universal.png[2m (C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\blender\model\mechanisms.py - compileMechanismList (l76))[0m
+[20260205_14:11:23] [1m[35mDEBUG[0m Adding mechanism preview: C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\data\blender\images\mechanisms\spherical.png[2m (C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\blender\model\mechanisms.py - compileMechanismList (l76))[0m
+[20260205_14:11:23] [1m[35mDEBUG[0m Adding mechanism preview: C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\data\blender\images\mechanisms\lambda_mechanism.png[2m (C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\blender\model\mechanisms.py - compileMechanismList (l76))[0m
+[20260205_14:11:23] [1m[35mDEBUG[0m Adding mechanism preview: C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\data\blender\images\mechanisms\2SPRR+1U.png[2m (C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\blender\model\mechanisms.py - compileMechanismList (l76))[0m
+[20260205_14:11:23] [1m[35mDEBUG[0m Adding mechanism preview: C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\data\blender\images\mechanisms\2SPU+1U.png[2m (C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\blender\model\mechanisms.py - compileMechanismList (l76))[0m
+  ... successful.
+
+----------------------------------------------------------------------------------------------------
+Unregistering Phobos...
+Unregistering phobosgui...
+Unregistering display...
+Unregistering icons...
+Unregistering classes...
+Unregistering manuals...
+  ... successful.
+Blender 5.0.0 (hash a37564c4df7a built 2025-11-18 11:06:54)
+
+Blender quit
+Looking in links: c:\Users\u60897\AppData\Local\Temp\tmpmc3s7bfo
+Requirement already satisfied: setuptools in c:\blender\5.0\python\lib\site-packages (63.2.0)
+Requirement already satisfied: pip in c:\blender\5.0\python\lib\site-packages (26.0.1)
+00:04.266  blend            | Read blend: "C:\Users\u60897\Documents\addon-phobos\tests\testutils\testutils.test.blend"
+00:04.266  blend.doversion  | WARNING Region type 4 missing in space type "Info" (id: 7) - removing region
+Parsing definitions from: C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\data\blender\definitions
+  defaultControllers.yml
+  defaultJoints.yml
+  defaultMaterials.yml
+  defaultMotors.yml
+  defaultSensors.yml
+  defaultSubmechanisms.yml
+Creating new definition type: joints
+Creating new definition type: motors
+Checking requirements:
+  Checking yaml
+  Checking numpy
+  Checking scipy
+  Checking pkg_resources
+  Checking collada
+  Checking pydot
+  Checking lxml
+  Checking networkx
+  Checking trimesh
+  Checking PIL
+Importing phobos
+RELOAD:  phobos.blender.defs
+Parsing definitions from: C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\data\blender\definitions
+  defaultControllers.yml
+  defaultJoints.yml
+  defaultMaterials.yml
+  defaultMotors.yml
+  defaultSensors.yml
+  defaultSubmechanisms.yml
+Creating new definition type: joints
+Creating new definition type: motors
+RELOAD:  phobos.blender.display
+RELOAD:  phobos.blender.io
+RELOAD:  phobos.blender.model
+RELOAD:  phobos.blender.operators
+RELOAD:  phobos.blender.phobosgui
+RELOAD:  phobos.blender.phoboslog
+RELOAD:  phobos.blender.phobossystem
+RELOAD:  phobos.blender.reserved_keys
+RELOAD:  phobos.blender.utils
+Registering operators.selection... 
+Registering operators.io...
+Registering operators.editing...
+Registering operators.naming...
+Registering operators.misc...
+
+Registering phobosgui...
+[20260205_14:11:28] [1m[92mINFO[0m Compiling mechanism list from local library...[2m (C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\blender\model\mechanisms.py - compileMechanismList (l53))[0m
+[20260205_14:11:28] [1m[35mDEBUG[0m Adding mechanism preview: C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\data\blender\images\mechanisms\revolute.png[2m (C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\blender\model\mechanisms.py - compileMechanismList (l76))[0m
+[20260205_14:11:28] [1m[35mDEBUG[0m Adding mechanism preview: C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\data\blender\images\mechanisms\universal.png[2m (C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\blender\model\mechanisms.py - compileMechanismList (l76))[0m
+[20260205_14:11:28] [1m[35mDEBUG[0m Adding mechanism preview: C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\data\blender\images\mechanisms\spherical.png[2m (C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\blender\model\mechanisms.py - compileMechanismList (l76))[0m
+[20260205_14:11:28] [1m[35mDEBUG[0m Adding mechanism preview: C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\data\blender\images\mechanisms\lambda_mechanism.png[2m (C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\blender\model\mechanisms.py - compileMechanismList (l76))[0m
+[20260205_14:11:28] [1m[35mDEBUG[0m Adding mechanism preview: C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\data\blender\images\mechanisms\2SPRR+1U.png[2m (C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\blender\model\mechanisms.py - compileMechanismList (l76))[0m
+[20260205_14:11:28] [1m[35mDEBUG[0m Adding mechanism preview: C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\data\blender\images\mechanisms\2SPU+1U.png[2m (C:\Users\u60897\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\phobos\blender\model\mechanisms.py - compileMechanismList (l76))[0m
+  ... successful.
+
+----------------------------------------------------------------------------------------------------
+Unregistering Phobos...
+Unregistering phobosgui...
+Unregistering display...
+Unregistering icons...
+Unregistering classes...
+Unregistering manuals...
+  ... successful.
+Blender 5.0.0 (hash a37564c4df7a built 2025-11-18 11:06:54)
+
+Blender quit
+####################################################################################################
+Running tests\basics\basics.test.blend tests...
+####################################################################################################
+####################################################################################################
+Exited with:  0
+####################################################################################################
+
+
+
+####################################################################################################
+Running tests\testmodel\testmodel.test.blend tests...
+####################################################################################################
+####################################################################################################
+Exited with:  0
+####################################################################################################
+
+
+
+####################################################################################################
+Running tests\testutils\testutils.test.blend tests...
+####################################################################################################
+####################################################################################################
+Exited with:  0
+####################################################################################################
+
+
+

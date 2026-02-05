@@ -1,0 +1,16 @@
+####################################################################################################
+Running tests\basics\basics.test.blend tests...
+####################################################################################################
+Traceback (most recent call last):
+  File "C:\Users\u60897\Documents\addon-phobos\tests\testrunner.py", line 30, in <module>
+    code = subprocess.call([blenderExecutable, '--addons', 'phobos', '--factory-startup',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\u60897\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 391, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\u60897\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 1028, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "C:\Users\u60897\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 1540, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] O sistema n�o pode encontrar o arquivo especificado

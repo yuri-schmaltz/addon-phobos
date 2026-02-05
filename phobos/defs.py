@@ -34,11 +34,12 @@ except ImportError:
     log.info("Blender-Python (bpy) not available.")
 
 
-PYBULLET_AVAILBABLE = False
+PYBULLET_AVAILABLE = False
 
 
 def check_pybullet_available():
-    if not PYBULLET_AVAILBABLE:
+    global PYBULLET_AVAILABLE
+    if not PYBULLET_AVAILABLE:
         from .commandline_logging import get_logger
         log = get_logger(__name__)
         try:
@@ -47,6 +48,7 @@ def check_pybullet_available():
             log.info("Pybullet tests available.")
         except ImportError:
             log.info("Pybullet tests not available.")
+            PYBULLET_AVAILABLE = False
     return PYBULLET_AVAILABLE
 
 

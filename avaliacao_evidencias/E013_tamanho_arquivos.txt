@@ -1,0 +1,25 @@
+
+Path                                Lines
+----                                -----
+phobos\blender\operators\editing.py  2881
+phobos\core\robot.py                 2370
+phobos\io\representation.py          2025
+phobos\blender\phobosgui.py          1624
+phobos\blender\operators\io.py        939
+phobos\ci\base_model.py               853
+phobos\blender\io\blender2phobos.py   803
+phobos\blender\operators\generic.py   779
+phobos\io\xmlrobot.py                 730
+phobos\ci\pipeline.py                 693
+phobos\blender\utils\editing.py       688
+phobos\io\smurfrobot.py               672
+phobos\blender\utils\validation.py    657
+phobos\ci\model_testing.py            548
+phobos\blender\io\phobos2blender.py   525
+phobos\blender\model\joints.py        479
+phobos\io\sensor_representations.py   454
+phobos\blender\display.py             409
+phobos\blender\utils\blender.py       396
+phobos\io\xml_factory.py              386
+
+

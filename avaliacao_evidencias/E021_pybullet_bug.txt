@@ -1,0 +1,28 @@
+0028: BPY_AVAILABLE = False
+0029: try:
+0030:     import bpy
+0031:     BPY_AVAILABLE = True
+0032:     log.info("Blender-Python (bpy) available.")
+0033: except ImportError:
+0034:     log.info("Blender-Python (bpy) not available.")
+0035: 
+0036: 
+0037: PYBULLET_AVAILBABLE = False
+0038: 
+0039: 
+0040: def check_pybullet_available():
+0041:     if not PYBULLET_AVAILBABLE:
+0042:         from .commandline_logging import get_logger
+0043:         log = get_logger(__name__)
+0044:         try:
+0045:             import pybullet as pb
+0046:             PYBULLET_AVAILABLE = True
+0047:             log.info("Pybullet tests available.")
+0048:         except ImportError:
+0049:             log.info("Pybullet tests not available.")
+0050:     return PYBULLET_AVAILABLE
+0051: 
+0052: 
+0053: def dump_json(obj, **kwargs):
+0054:     import json
+0055:     if "default_flow_style" in kwargs:

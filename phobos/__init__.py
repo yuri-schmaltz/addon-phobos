@@ -22,6 +22,15 @@ try:
 except ImportError:
     pass
 
+
+def _ensure_modules_path():
+    """Ensure Blender user scripts/modules path is on sys.path."""
+    if not BPY_AVAILABLE:
+        return
+    modules_path = bpy.utils.user_resource("SCRIPTS", path="modules")
+    if modules_path and modules_path not in sys.path:
+        sys.path.append(modules_path)
+
 # Phobos information
 version = '2.0.0 "Perilled Pangolin"'
 repository = 'https://github.com/dfki-ric/phobos'
@@ -63,6 +72,10 @@ extra_requirements = {
 }
 
 installation_finished_message = "All Phobos requirements have been installed.\nPlease restart Blender to activate the Phobos add-on!"
+
+# Ensure user modules path is available before any dependency checks/imports.
+if BPY_AVAILABLE:
+    _ensure_modules_path()
 
 
 def install_requirement(package_name, upgrade_pip=False, lib=None, ensure_pip=True):
@@ -208,9 +221,20 @@ def register():
         blender.operators.poses.register()
         blender.phobosgui.register()
     except ImportError:
-        def draw(self, context):
-            self.layout.label(text=installation_finished_message)
-        bpy.context.window_manager.popup_menu(draw, title="Phobos: Please restart Blender")  # , icon=icon)
+        # Avoid UI popups in background/headless mode to prevent crashes.
+        if BPY_AVAILABLE:
+            try:
+                if not bpy.app.background:
+                    def draw(self, context):
+                        self.layout.label(text=installation_finished_message)
+                    bpy.context.window_manager.popup_menu(
+                        draw, title="Phobos: Please restart Blender"
+                    )  # , icon=icon)
+                else:
+                    print(installation_finished_message)
+            except Exception:
+                # Fallback: log to console if popup fails
+                print(installation_finished_message)
         raise ImportWarning(installation_finished_message)
 
 

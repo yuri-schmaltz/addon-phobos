@@ -1,0 +1,23 @@
+elapsed_seconds=1.686
+returncode=1
+--- stdout ---
+
+--- stderr ---
+c:\Users\u60897\Documents\addon-phobos\phobos\io\xml_factory.py:10: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+<frozen runpy>:128: RuntimeWarning: 'phobos.scripts.phobos' found in sys.modules after import of package 'phobos.scripts', but prior to execution of 'phobos.scripts.phobos'; this may result in unpredictable behaviour
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "c:\Users\u60897\Documents\addon-phobos\phobos\scripts\phobos.py", line 74, in <module>
+    main()
+  File "c:\Users\u60897\Documents\addon-phobos\phobos\scripts\phobos.py", line 54, in main
+    getattr(scripts, f).can_be_used()]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\u60897\Documents\addon-phobos\phobos\scripts\smurfs_in_pybullet.py", line 8, in can_be_used
+    return check_pybullet_available()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\u60897\Documents\addon-phobos\phobos\defs.py", line 50, in check_pybullet_available
+    return PYBULLET_AVAILABLE
+           ^^^^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'PYBULLET_AVAILABLE' where it is not associated with a value

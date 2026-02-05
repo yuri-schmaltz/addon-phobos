@@ -84,6 +84,8 @@ class Pose(Representation, SmurfBase):
         self.excludes += ["xyz", "rpy"]
         self.relative_to = relative_to
         self._matrix = np.identity(4)
+        self._rpy_cache = None
+        self._xyz_cache = None
         if "matrix" in kwargs:
             self._matrix = kwargs["matrix"]
             return
@@ -132,16 +134,22 @@ class Pose(Representation, SmurfBase):
 
     @property
     def rotation(self):
+        if self._rpy_cache is not None:
+            return self._rpy_cache
         return transform.matrix_to_rpy(self._matrix[0:3, 0:3])
 
     @rotation.setter
     def rotation(self, value):
+        self._rpy_cache = None
         if type(value) in [int, float]:
             self._matrix[0:3, 0:3] = transform.rpy_to_matrix([0, 0, value])
+            self._rpy_cache = [0.0, 0.0, float(value)]
         elif type(value) in [list, tuple, np.ndarray] and len(value) == 3:
             self._matrix[0:3, 0:3] = transform.rpy_to_matrix(value)
+            self._rpy_cache = [float(v) for v in value]
         elif BPY_AVAILABLE and hasattr(value, "__len__") and type(value) != str and len(value) == 3:
             self._matrix[0:3, 0:3] = transform.rpy_to_matrix(np.array(value))
+            self._rpy_cache = [float(v) for v in value]
         elif type(value) in [list, tuple, np.ndarray, dict] and len(value) == 4:
             self._matrix[0:3, 0:3] = transform.quaternion_to_matrix(value)
         elif BPY_AVAILABLE and hasattr(value, "__len__") and type(value) != str and len(value) == 4:
@@ -150,14 +158,17 @@ class Pose(Representation, SmurfBase):
         elif type(value) == dict and len(value) == 3:
             if all([k in "rpy" for k in value.keys()]):
                 self._matrix[0:3, 0:3] = transform.rpy_to_matrix([value["r"], value["p"], value["y"]])
+                self._rpy_cache = [float(value["r"]), float(value["p"]), float(value["y"])]
             elif all([k in "xyz" for k in value.keys()]):
                 self._matrix[0:3, 0:3] = transform.rpy_to_matrix([value["x"], value["y"], value["z"]])
+                self._rpy_cache = [float(value["x"]), float(value["y"]), float(value["z"])]
             else:
                 raise ValueError("Can't parse rotation" + str(value))
         elif type(value) in [list, np.ndarray]:
             self._matrix[0:3, 0:3] = transform.matrix_to_rpy(value)
         elif value is None:
             self._matrix[0:3, 0:3] = numpy.identity(3)
+            self._rpy_cache = [0.0, 0.0, 0.0]
         else:
             raise ValueError("Can't parse rotation " + str(value))
         # if we have an pi or pi/2, pi/4 approximation let's make pi or pi/2, pi/4 out of it
@@ -186,15 +197,19 @@ class Pose(Representation, SmurfBase):
 
     @property
     def position(self):
+        if self._xyz_cache is not None:
+            return np.array(self._xyz_cache)
         return self.to_matrix()[0:3, 3]
 
     @position.setter
     def position(self, value):
         if value is None:
             self._matrix[0:3, 3] = np.array([0.0, 0.0, 0.0])
+            self._xyz_cache = [0.0, 0.0, 0.0]
         else:
             assert (type(value) in [list, np.ndarray, tuple] or (hasattr(value, "__len__") and type(value) != str)) and len(value) == 3
             self._matrix[0:3, 3] = np.array(value)
+            self._xyz_cache = [float(v) for v in value]
 
     def from_vec(self, vec):
         assert len(vec) == 6, "Invalid length"
@@ -898,6 +913,9 @@ class Mesh(Representation, SmurfBase):
             format = self._related_robot_instance.mesh_format
         if format in [None, "input_type"] and self.input_type.startswith("file"):
             format = self.input_type[5:]
+            # Keep the legacy export layout for input_type by nesting per format.
+            if os.path.basename(os.path.normpath(targetpath)).lower() == "meshes":
+                targetpath = os.path.join(targetpath, format.lower())
         if format is None:
             raise AssertionError("To export meshes you have to specify the format. (format=None)")
         assert os.path.isabs(targetpath)
@@ -1642,6 +1660,18 @@ class Link(Representation, SmurfBase):
                 if not any([existing.name == s.name and existing.equivalent(s) for existing in self._related_robot_instance.sensors]):
                     self._related_robot_instance.add_aggregate("sensor", s)
 
+    def link_with_robot(self, robot, check_linkage_later=False):
+        super(Link, self).link_with_robot(robot, check_linkage_later=True)
+        # Attach deferred sensors parsed before the robot linkage was available (e.g., SDF link sensors).
+        if hasattr(self, "_sensors") and self._sensors:
+            for s in self._sensors:
+                if not any([existing.name == s.name and existing.equivalent(s) for existing in robot.sensors]):
+                    s.link_with_robot(robot, check_linkage_later=True)
+                    robot.add_sensor(s)
+            self._sensors = []
+        if not check_linkage_later:
+            self.check_linkage()
+
 class JointDynamics(Representation):
     def __init__(self, damping=None, friction=None, spring_stiffness=None, spring_reference=None, **kwargs):
         super().__init__()
@@ -1817,12 +1847,15 @@ class Joint(Representation, SmurfBase):
         if self.origin is None:
             return None
         assert self._related_robot_instance is not None, "Trying to get joint_relative_origin while robot is not linked"
-        parent_joint_name = self._related_robot_instance.get_parent(self.parent)
+        parent_link_name = self.parent
+        if str(self.origin.relative_to) == str(parent_link_name):
+            return self.origin
+        parent_joint_name = self._related_robot_instance.get_parent(parent_link_name)
         if parent_joint_name is None:
             # This a joint from the root link
             assert str(self.origin.relative_to) == str(self._related_robot_instance.get_root()) == str(self.parent)
             return self.origin
-        elif self.origin.relative_to != parent_joint_name:
+        elif str(self.origin.relative_to) != str(parent_joint_name):
             r2x = self._related_robot_instance.get_transformation
             out = Pose.from_matrix(
                 inv(r2x(parent_joint_name)).dot(r2x(self.origin.relative_to).dot(self.origin.to_matrix())),

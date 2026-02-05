@@ -13,7 +13,10 @@
 Contains the Blender operators used to edit/add poses for Phobos models.
 """
 
-import bgl
+try:
+    import bgl
+except ImportError:
+    bgl = None
 import blf
 import bpy
 from bpy.props import StringProperty, EnumProperty
@@ -157,6 +160,9 @@ class DeletePoseOperator(Operator):
 
 # show robot model on 3dview
 def draw_preview_callback(self):
+    if bgl is None:
+        # Blender 5.0+ removed bgl; skip drawing instead of failing.
+        return
     """TODO Missing documentation"""
 
     # Search for View_3d window

@@ -83,7 +83,6 @@ class Robot(SMURFRobot):
         """
         if float_fmt_dict is None:
             float_fmt_dict = {}
-
         outputfile = os.path.abspath(outputfile)
 
         xml_string = '<?xml version="1.0" encoding="UTF-8"?>\n'+ \
@@ -111,6 +110,8 @@ class Robot(SMURFRobot):
 
         if float_fmt_dict is None:
             float_fmt_dict = {}
+        # Match legacy URDF expectations (e.g., "90" instead of "90.0" for hfov)
+        float_fmt_dict.setdefault("hfov", "%g")
         self.joints = self.get_joints_ordered_df()
 
         outputfile = os.path.abspath(outputfile)

@@ -21,7 +21,7 @@
         },
         "sensor": {
           "classname": "SensorFactory",
-          "varname": "sensors_that_dont_belong_to_links_or_joints"
+          "varname": "sensors"
         },
         "transmission": {
           "classname": "Transmission",
@@ -46,10 +46,6 @@
         "collision": {
           "classname": "Collision",
           "varname": "collisions"
-        },
-        "sensor": {
-          "classname": "SensorFactory",
-          "varname": "sensors"
         }
       }
     },
@@ -319,8 +315,7 @@
       "tag": "sensor",
       "attributes": {
         "name": "name",
-        "rate": "rate",
-        "type": "sdf_type"
+        "rate": "rate"
       },
       "attribute_children": {
         "parent": {
@@ -375,7 +370,7 @@
               "value_children": {
                 "width": "width",
                 "height": "height",
-                "hfov": "opening_width_rad"
+                "hfov": "opening_width"
               }
             }
           }
@@ -392,8 +387,7 @@
       "tag": "sensor",
       "attributes": {
         "name": "name",
-        "rate": "rate",
-        "type": "sdf_type"
+        "rate": "rate"
       },
       "attribute_children": {
         "parent": {
@@ -412,8 +406,7 @@
       "tag": "sensor",
       "attributes": {
         "name": "name",
-        "rate": "rate",
-        "type": "sdf_type"
+        "rate": "rate"
       },
       "attribute_children": {
         "parent": {
@@ -457,8 +450,7 @@
       "tag": "sensor",
       "attributes": {
         "name": "name",
-        "rate": "rate",
-        "type": "sdf_type"
+        "rate": "rate"
       },
       "attribute_children": {
         "parent": {
@@ -478,7 +470,7 @@
               "value_children": {
                 "width": "width",
                 "height": "height",
-                "hfov": "opening_width_rad"
+                "hfov": "opening_width"
               }
             }
           }
@@ -489,8 +481,7 @@
       "tag": "sensor",
       "attributes": {
         "name": "name",
-        "rate": "rate",
-        "type": "sdf_type"
+        "rate": "rate"
       },
       "attribute_children": {
         "parent": {
@@ -515,8 +506,7 @@
       "tag": "sensor",
       "attributes": {
         "name": "name",
-        "rate": "rate",
-        "type": "sdf_type"
+        "rate": "rate"
       },
       "attribute_children": {
         "parent": {
@@ -675,6 +665,9 @@
     },
     "Material": {
       "tag": "material",
+      "attributes": {
+        "name": "name"
+      },
       "value_children": {
         "diffuse": "diffuse",
         "ambient": "ambient",

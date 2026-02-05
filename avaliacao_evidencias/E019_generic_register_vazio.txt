@@ -1,0 +1,49 @@
+0930:                 value = prop.getValue(self.custom_properties, boolAsString=True)
+0931:                 ob[name] = value
+0932: 
+0933:         self.objectReady = True
+0934:         self.isPopUp = False
+0935:         return {'FINISHED'}
+0936: 
+0937: class EditAnnotationsOperator(bpy.types.Operator):
+0938:     """Modify annotations"""
+0939: 
+0940:     bl_idname = "phobos.edit_annotations"
+0941:     bl_label = "Edit Annotation"
+0942:     bl_space_type = 'VIEW_3D'
+0943:     bl_region_type = 'FILE'
+0944:     bl_options = {'REGISTER', 'UNDO'}
+0945: 
+0946:     def invoke(self, context, event):
+0947:         global annotationEditOnly
+0948:         annotationEditOnly = True
+0949:         bpy.ops.phobos.annotations('INVOKE_DEFAULT')
+0950:         return {'FINISHED'}
+0951: 
+0952:     @classmethod
+0953:     def poll(cls, context):
+0954:         return context.active_object and context.active_object.phobostype == "annotation"
+0955: 
+0956: 
+0957: class AddAnnotationsOperator(bpy.types.Operator):
+0958:     """Modify annotations"""
+0959: 
+0960:     bl_idname = "phobos.add_annotations"
+0961:     bl_label = "Add Annotation"
+0962:     bl_space_type = 'VIEW_3D'
+0963:     bl_region_type = 'FILE'
+0964:     bl_options = {'REGISTER', 'UNDO'}
+0965: 
+0966:     def invoke(self, context, event):
+0967:         global annotationEditOnly
+0968:         annotationEditOnly = False
+0969:         bpy.ops.phobos.annotations('INVOKE_DEFAULT')
+0970:         return {'FINISHED'}
+0971: 
+0972: 
+0973: def register():
+0974:     """TODO Missing documentation"""
+0975: 
+0976: 
+0977: def unregister():
+0978:     """TODO Missing documentation"""

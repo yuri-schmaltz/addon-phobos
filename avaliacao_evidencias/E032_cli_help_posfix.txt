@@ -1,0 +1,88 @@
+C:\Users\u60897\Documents\addon-phobos\phobos\io\xml_factory.py:10: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+C:\Users\u60897\Documents\addon-phobos\phobos\ci\pipeline.py:246: SyntaxWarning: invalid escape sequence '\.'
+  ignore=["\.gv", "\.pdf", "\.git*", "\_history.log", "README\.md", "manifest\.xml"],
+C:\Users\u60897\Documents\addon-phobos\phobos\ci\pipeline.py:246: SyntaxWarning: invalid escape sequence '\.'
+  ignore=["\.gv", "\.pdf", "\.git*", "\_history.log", "README\.md", "manifest\.xml"],
+C:\Users\u60897\Documents\addon-phobos\phobos\ci\pipeline.py:246: SyntaxWarning: invalid escape sequence '\.'
+  ignore=["\.gv", "\.pdf", "\.git*", "\_history.log", "README\.md", "manifest\.xml"],
+C:\Users\u60897\Documents\addon-phobos\phobos\ci\pipeline.py:246: SyntaxWarning: invalid escape sequence '\_'
+  ignore=["\.gv", "\.pdf", "\.git*", "\_history.log", "README\.md", "manifest\.xml"],
+C:\Users\u60897\Documents\addon-phobos\phobos\ci\pipeline.py:246: SyntaxWarning: invalid escape sequence '\.'
+  ignore=["\.gv", "\.pdf", "\.git*", "\_history.log", "README\.md", "manifest\.xml"],
+C:\Users\u60897\Documents\addon-phobos\phobos\ci\pipeline.py:246: SyntaxWarning: invalid escape sequence '\.'
+  ignore=["\.gv", "\.pdf", "\.git*", "\_history.log", "README\.md", "manifest\.xml"],
+C:\Users\u60897\Documents\addon-phobos\phobos\ci\base_model.py:790: SyntaxWarning: invalid escape sequence '\$'
+  "\$INPUTNAME": self.modelname,
+C:\Users\u60897\Documents\addon-phobos\phobos\ci\base_model.py:791: SyntaxWarning: invalid escape sequence '\$'
+  "\$AUTHOR": "<author>" + os.path.join(self.pipeline.configdir,
+C:\Users\u60897\Documents\addon-phobos\phobos\ci\base_model.py:793: SyntaxWarning: invalid escape sequence '\$'
+  "\$MAINTAINER": "<maintainer>https://git.hb.dfki.de/phobos/ci-run/-/wikis/home</maintainer>",
+C:\Users\u60897\Documents\addon-phobos\phobos\ci\base_model.py:794: SyntaxWarning: invalid escape sequence '\$'
+  "\$URL": "<url>" + url + "</url>",
+C:\Users\u60897\Documents\addon-phobos\phobos\ci\base_model.py:804: SyntaxWarning: invalid escape sequence '\$'
+  "\$MODELNAME": self.modelname,
+C:\Users\u60897\Documents\addon-phobos\phobos\ci\base_model.py:805: SyntaxWarning: invalid escape sequence '\$'
+  "\$USERS": self.pipeline.mr_mention if not hasattr(self, "mr_mention") else self.mr_mention,
+C:\Users\u60897\Documents\addon-phobos\phobos\ci\base_model.py:806: SyntaxWarning: invalid escape sequence '\$'
+  "\$DEFINITION_FILE": "https://git.hb.dfki.de/" + os.path.join(
+C:\Users\u60897\Documents\addon-phobos\phobos\ci\model_testing.py:286: SyntaxWarning: invalid escape sequence '\.'
+  new_files = list_files(self.new.exportdir, ignore=["\.gv", "\.pdf", "\.git*", "README\.md", "manifest\.xml"])
+C:\Users\u60897\Documents\addon-phobos\phobos\ci\model_testing.py:286: SyntaxWarning: invalid escape sequence '\.'
+  new_files = list_files(self.new.exportdir, ignore=["\.gv", "\.pdf", "\.git*", "README\.md", "manifest\.xml"])
+C:\Users\u60897\Documents\addon-phobos\phobos\ci\model_testing.py:286: SyntaxWarning: invalid escape sequence '\.'
+  new_files = list_files(self.new.exportdir, ignore=["\.gv", "\.pdf", "\.git*", "README\.md", "manifest\.xml"])
+C:\Users\u60897\Documents\addon-phobos\phobos\ci\model_testing.py:286: SyntaxWarning: invalid escape sequence '\.'
+  new_files = list_files(self.new.exportdir, ignore=["\.gv", "\.pdf", "\.git*", "README\.md", "manifest\.xml"])
+C:\Users\u60897\Documents\addon-phobos\phobos\ci\model_testing.py:286: SyntaxWarning: invalid escape sequence '\.'
+  new_files = list_files(self.new.exportdir, ignore=["\.gv", "\.pdf", "\.git*", "README\.md", "manifest\.xml"])
+C:\Users\u60897\Documents\addon-phobos\phobos\ci\model_testing.py:287: SyntaxWarning: invalid escape sequence '\.'
+  old_files = list_files(self.old.directory, ignore=["\.gv", "\.pdf", "\.git*", "README\.md", "manifest\.xml"])
+C:\Users\u60897\Documents\addon-phobos\phobos\ci\model_testing.py:287: SyntaxWarning: invalid escape sequence '\.'
+  old_files = list_files(self.old.directory, ignore=["\.gv", "\.pdf", "\.git*", "README\.md", "manifest\.xml"])
+C:\Users\u60897\Documents\addon-phobos\phobos\ci\model_testing.py:287: SyntaxWarning: invalid escape sequence '\.'
+  old_files = list_files(self.old.directory, ignore=["\.gv", "\.pdf", "\.git*", "README\.md", "manifest\.xml"])
+C:\Users\u60897\Documents\addon-phobos\phobos\ci\model_testing.py:287: SyntaxWarning: invalid escape sequence '\.'
+  old_files = list_files(self.old.directory, ignore=["\.gv", "\.pdf", "\.git*", "README\.md", "manifest\.xml"])
+C:\Users\u60897\Documents\addon-phobos\phobos\ci\model_testing.py:287: SyntaxWarning: invalid escape sequence '\.'
+  old_files = list_files(self.old.directory, ignore=["\.gv", "\.pdf", "\.git*", "README\.md", "manifest\.xml"])
+C:\Users\u60897\Documents\addon-phobos\phobos\scripts\preprocess_cad_export.py:127: SyntaxWarning: invalid escape sequence '\?'
+  "<\?xml version.*\?>\n": ""
+C:\Users\u60897\Documents\addon-phobos\phobos\scripts\preprocess_cad_export.py:175: SyntaxWarning: invalid escape sequence '\$'
+  "\$INPUTNAME": os.path.basename(os.path.abspath(args.output_directory))
+C:\Users\u60897\Documents\addon-phobos\phobos\scripts\preprocess_cad_export.py:186: SyntaxWarning: invalid escape sequence '\<'
+  author = regex_replace(author, {"\<": "", "\>": ""})
+C:\Users\u60897\Documents\addon-phobos\phobos\scripts\preprocess_cad_export.py:186: SyntaxWarning: invalid escape sequence '\>'
+  author = regex_replace(author, {"\<": "", "\>": ""})
+C:\Users\u60897\Documents\addon-phobos\phobos\scripts\preprocess_cad_export.py:189: SyntaxWarning: invalid escape sequence '\$'
+  "\$INPUTNAME": os.path.basename(os.path.abspath(args.output_directory)),
+C:\Users\u60897\Documents\addon-phobos\phobos\scripts\preprocess_cad_export.py:190: SyntaxWarning: invalid escape sequence '\$'
+  "\$AUTHOR": "<author>" + author + "</author>" if author != "" else "",
+C:\Users\u60897\Documents\addon-phobos\phobos\scripts\preprocess_cad_export.py:191: SyntaxWarning: invalid escape sequence '\$'
+  "\$MAINTAINER": "<maintainer>" + maintainer + "</maintainer>" if maintainer != "" else "",
+C:\Users\u60897\Documents\addon-phobos\phobos\scripts\preprocess_cad_export.py:192: SyntaxWarning: invalid escape sequence '\$'
+  "\$URL": "<url>" + url + "</url>" if url != "" else "",
+C:\Users\u60897\Documents\addon-phobos\phobos\scripts\setup_git.py:72: SyntaxWarning: invalid escape sequence '\$'
+  "\$INPUTNAME": os.path.basename(args.directory),
+C:\Users\u60897\Documents\addon-phobos\phobos\scripts\setup_git.py:73: SyntaxWarning: invalid escape sequence '\$'
+  "\$AUTHOR": "<author>" + author + "</author>",
+C:\Users\u60897\Documents\addon-phobos\phobos\scripts\setup_git.py:74: SyntaxWarning: invalid escape sequence '\$'
+  "\$MAINTAINER": "<maintainer>"+maintainer+"</maintainer>",
+C:\Users\u60897\Documents\addon-phobos\phobos\scripts\setup_git.py:75: SyntaxWarning: invalid escape sequence '\$'
+  "\$URL": "<url>" + url + "</url>",
+<frozen runpy>:128: RuntimeWarning: 'phobos.scripts.phobos' found in sys.modules after import of package 'phobos.scripts', but prior to execution of 'phobos.scripts.phobos'; this may result in unpredictable behaviour
+Phobos is a tool to process simulation models 
+
+Usage:
+phobos COMMAND ARGUMENTS
+Commands:
+       check_meshes              Checks whether all meshes are available.
+       convert                   Converts the given input robot file to SDF/URDF/PDF/THUMBNAIL/SMURF/SMURFA/SMURFS.
+       get_model_file_overview   Prints a json string where to find the different model files
+       preprocess_cad_export     Preprocess CAD->URDF exports to use with pipeline.
+       reduce_mesh               Reduces the given mesh's number of vertices by the given factor, while trying to maintain the geometry as similar as possible.
+       run_pipeline              Process simulation models automatically.
+       setup_git                 Sets-up a git repository for a simulation/control model.
+       test_model                Test the latest model using a CI-pipeline.
+     X check_hyrodyn             Checks whether the model can be loaded in Hyrodyn.  UNAVAILABLE: Hyrodyn might not be installed!
+     X smurfs_in_pybullet        Loads a "smurfs" file in pyBullet.  UNAVAILABLE: Pybullet is not available!

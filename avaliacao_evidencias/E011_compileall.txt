@@ -1,0 +1,6 @@
+phobos\blender\utils\editing.py:119: SyntaxWarning: invalid escape sequence '\ '
+  """Restructures a tree such that the ``link`` provided becomes the root of the tree.
+phobos\blender\utils\general.py:262: SyntaxWarning: invalid escape sequence '\.'
+  dtime = datetime(*[int(a) for a in re.split(":|-|T| |\.", iso)])
+phobos\blender\utils\validation.py:567: SyntaxWarning: invalid escape sequence '\ '
+  """Validates an inertia dictionary or object.

@@ -1,0 +1,131 @@
+0120:                         if install:
+0121:                             install_requirement(req_name, upgrade_pip=False, lib=lib, ensure_pip=False)
+0122:                         else:
+0123:                             raise ImportError("Uninstalled requirement:"+ req_name)
+0124:             except subprocess.CalledProcessError as e:
+0125:                 if import_name in list(optional_requirements.keys()) + list(extra_requirements.keys()):
+0126:                     print(f"Couldn't install optional requirement {import_name} ({req_name})")
+0127:                 else:
+0128:                     raise e
+0129:     importlib.invalidate_caches()
+0130: 
+0131: 
+0132: def register():
+0133:     """This function registers all modules to blender.
+0134: 
+0135:     :return: Nothing
+0136: 
+0137:     Args:
+0138: 
+0139:     Returns:
+0140: 
+0141:     """
+0142:     try:
+0143:         from . import defs
+0144:         from . import io
+0145:         from . import core
+0146:         from . import geometry
+0147:         from . import utils
+0148:         from . import ci
+0149:         # from . import scripts
+0150: 
+0151:         # Recursively import all submodules
+0152:         from . import blender
+0153: 
+0154:         def import_submodules(package, recursive=True, verbose=False):
+0155:             """Import all submodules of a module, recursively, including subpackages.
+0156:                 If a module is already imported it is reloaded instead.
+0157:                 Recursion can be turned off.
+0158:                 The imported modules are returned as dictionary.
+0159: 
+0160:             Args:
+0161:             package(str | module): package (name or actual module)
+0162:             recursive(bool, optional): recursion active (Default value = True)
+0163:             verbose(bool, optional): import feedback active (Default value = False)
+0164: 
+0165:             Returns:
+0166: 
+0167:             """
+0168:             import sys
+0169:             import pkgutil
+0170:             import importlib
+0171: 
+0172:             modules = sys.modules
+0173: 
+0174:             # when using string import initial module first
+0175:             if isinstance(package, str):
+0176:                 package = importlib.import_module(package)
+0177: 
+0178:             results = {}
+0179:             # iterate over all modules in package path
+0180:             for loader, name, is_pkg in pkgutil.walk_packages(package.__path__):
+0181:                 full_name = package.__name__ + '.' + name
+0182: 
+0183:                 # reload already imported modules
+0184:                 if full_name in modules.keys():
+0185:                     if verbose:
+0186:                         print("RELOAD: ", full_name)
+0187:                     results[full_name] = importlib.reload(modules[full_name])
+0188:                 # otherwise import them
+0189:                 else:
+0190:                     if verbose:
+0191:                         print("IMPORT: ", full_name)
+0192:                     results[full_name] = importlib.import_module(full_name)
+0193: 
+0194:                 # recursion on submodules
+0195:                 if recursive and is_pkg:
+0196:                     results.update(import_submodules(full_name))
+0197:             return results
+0198: 
+0199:         print("Importing phobos")
+0200:         import_submodules(blender, verbose=True)
+0201: 
+0202:         # bpy.utils.register_module(__name__)
+0203:         blender.operators.selection.register()
+0204:         blender.operators.io.register()
+0205:         blender.operators.editing.register()
+0206:         blender.operators.generic.register()
+0207:         blender.operators.naming.register()
+0208:         blender.operators.poses.register()
+0209:         blender.phobosgui.register()
+0210:     except ImportError:
+0211:         def draw(self, context):
+0212:             self.layout.label(text=installation_finished_message)
+0213:         bpy.context.window_manager.popup_menu(draw, title="Phobos: Please restart Blender")  # , icon=icon)
+0214:         raise ImportWarning(installation_finished_message)
+0215: 
+0216: 
+0217: def unregister():
+0218:     """This function unregisters all modules in Blender."""
+0219:     print("\n" + "-" * 100)
+0220:     print("Unregistering Phobos...")
+0221:     # [TODO v2.1.0] delete all imported modules to resolve reregistration conflicts
+0222:     from . import blender
+0223:     blender.phobosgui.unregister()
+0224: 
+0225: 
+0226: if not "blender" in sys.executable.lower() and not BPY_AVAILABLE:
+0227:     try:
+0228:         # in newer version this deprecates in favor of importlib.resources
+0229:         from importlib.metadata import version, PackageNotFoundError
+0230:     except ImportError:
+0231:         try:
+0232:             from importlib_metadata import version, PackageNotFoundError
+0233:         except ImportError:
+0234:             from pkg_resources import get_distribution, DistributionNotFound as PackageNotFoundError
+0235:             def version(package_name):
+0236:                 return get_distribution("phobos").version
+0237:     try:
+0238:         __version__ = version("phobos")
+0239:     except PackageNotFoundError:
+0240:         __version__ = ".".join([str(x) for x in bl_info["version"]])
+0241:     del version, PackageNotFoundError
+0242: 
+0243: if BPY_AVAILABLE:
+0244:     try:
+0245:         from . import defs
+0246:         from . import io
+0247:         from . import core
+0248:         from . import geometry
+0249:         from . import utils
+0250:         from . import ci

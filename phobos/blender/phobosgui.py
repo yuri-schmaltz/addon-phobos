@@ -188,9 +188,11 @@ class PhobosExportSettings(bpy.types.PropertyGroup):
         """
         if bpy.data.filepath and bpy.context.scene.phobosexportsettings.path == "":
             bpy.context.scene.phobosexportsettings.path = "//"
-        elif (not bpy.data.filepath and bpy.context.scene.phobosexportsettings.path.startswith("//")) or\
+        elif (not bpy.data.filepath and bpy.context.scene.phobosexportsettings.path.startswith("//")) or \
                 bpy.context.scene.phobosexportsettings.path == "":
-            bpy.context.scene.phobosexportsettings.path = bpy.context.preferences.addons["phobos"].preferences.modelsfolder
+            addon = bpy.context.preferences.addons.get("phobos")
+            modelsfolder = addon.preferences.modelsfolder if addon else ""
+            bpy.context.scene.phobosexportsettings.path = modelsfolder
 
     def getXMLTypeListForEnumProp(self, context):
         """
@@ -221,9 +223,7 @@ class PhobosExportSettings(bpy.types.PropertyGroup):
     path : StringProperty(
         name='path',
         subtype='DIR_PATH',
-        default=(""
-                 if bpy.context.preferences.addons["phobos"].preferences is None
-                 else bpy.context.preferences.addons["phobos"].preferences.modelsfolder),
+        default="",
         update=updateExportPath
     )
 

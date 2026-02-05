@@ -1,0 +1,73 @@
+Looking in links: c:\Users\u60897\AppData\Local\Temp\tmp0lqnjjwj
+Requirement already satisfied: setuptools in c:\blender\5.0\python\lib\site-packages (63.2.0)
+Requirement already satisfied: pip in c:\blender\5.0\python\lib\site-packages (26.0)
+Requirement already satisfied: pip in C:\Blender\5.0\python\Lib\site-packages (26.0)
+Collecting pyyaml
+  Using cached pyyaml-6.0.3-cp311-cp311-win_amd64.whl.metadata (2.4 kB)
+Using cached pyyaml-6.0.3-cp311-cp311-win_amd64.whl (158 kB)
+Installing collected packages: pyyaml
+Successfully installed pyyaml-6.0.3
+Collecting scipy
+  Using cached scipy-1.17.0-cp311-cp311-win_amd64.whl.metadata (60 kB)
+Collecting numpy<2.7,>=1.26.4 (from scipy)
+  Using cached numpy-2.4.2-cp311-cp311-win_amd64.whl.metadata (6.6 kB)
+Using cached scipy-1.17.0-cp311-cp311-win_amd64.whl (36.4 MB)
+Using cached numpy-2.4.2-cp311-cp311-win_amd64.whl (12.6 MB)
+Installing collected packages: numpy, scipy
+
+Successfully installed numpy-2.4.2 scipy-1.17.0
+Collecting pycollada
+  Using cached pycollada-0.9.3-py3-none-any.whl.metadata (1.7 kB)
+Collecting python-dateutil (from pycollada)
+  Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting numpy (from pycollada)
+  Using cached numpy-2.4.2-cp311-cp311-win_amd64.whl.metadata (6.6 kB)
+Collecting six>=1.5 (from python-dateutil->pycollada)
+  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Using cached pycollada-0.9.3-py3-none-any.whl (129 kB)
+Using cached numpy-2.4.2-cp311-cp311-win_amd64.whl (12.6 MB)
+Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+Installing collected packages: six, numpy, python-dateutil, pycollada
+
+Successfully installed numpy-2.4.2 pycollada-0.9.3 python-dateutil-2.9.0.post0 six-1.17.0
+Collecting pydot
+  Using cached pydot-4.0.1-py3-none-any.whl.metadata (11 kB)
+Collecting pyparsing>=3.1.0 (from pydot)
+  Using cached pyparsing-3.3.2-py3-none-any.whl.metadata (5.8 kB)
+Using cached pydot-4.0.1-py3-none-any.whl (37 kB)
+Using cached pyparsing-3.3.2-py3-none-any.whl (122 kB)
+Installing collected packages: pyparsing, pydot
+
+Successfully installed pydot-4.0.1 pyparsing-3.3.2
+Collecting lxml
+  Using cached lxml-6.0.2-cp311-cp311-win_amd64.whl.metadata (3.7 kB)
+Using cached lxml-6.0.2-cp311-cp311-win_amd64.whl (4.0 MB)
+Installing collected packages: lxml
+Successfully installed lxml-6.0.2
+Collecting networkx
+  Using cached networkx-3.6.1-py3-none-any.whl.metadata (6.8 kB)
+Using cached networkx-3.6.1-py3-none-any.whl (2.1 MB)
+Installing collected packages: networkx
+Successfully installed networkx-3.6.1
+Collecting trimesh
+  Using cached trimesh-4.11.1-py3-none-any.whl.metadata (13 kB)
+Collecting numpy>=1.20 (from trimesh)
+  Using cached numpy-2.4.2-cp311-cp311-win_amd64.whl.metadata (6.6 kB)
+Using cached trimesh-4.11.1-py3-none-any.whl (740 kB)
+Using cached numpy-2.4.2-cp311-cp311-win_amd64.whl (12.6 MB)
+Installing collected packages: numpy, trimesh
+
+Successfully installed numpy-2.4.2 trimesh-4.11.1
+Collecting Pillow
+  Using cached pillow-12.1.0-cp311-cp311-win_amd64.whl.metadata (9.0 kB)
+Using cached pillow-12.1.0-cp311-cp311-win_amd64.whl (7.0 MB)
+Installing collected packages: Pillow
+Successfully installed Pillow-12.1.0
+00:54.672  lib.icons        | ERROR no icon for icon ID: 4
+Blender 5.0.0 (hash a37564c4df7a built 2025-11-18 11:06:54)
+Writing: C:\Users\u60897\AppData\Local\Temp\blender.crash.txt
+Error   : EXCEPTION_ACCESS_VIOLATION
+Address : 0x00007FF75DA0CB6E
+Module  : blender.exe
+Thread  : 00003630

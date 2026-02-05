@@ -26,7 +26,7 @@ from ..utils.validation import validate, validateInertiaData
 
 from ...io import representation
 from ...utils.inertia import calculateBoxInertia, calculateCylinderInertia, calculateSphereInertia, \
-    calculateMeshInertia
+    calculateMeshInertia, calculateEllipsoidInertia
 
 
 @validate('geometry_type')

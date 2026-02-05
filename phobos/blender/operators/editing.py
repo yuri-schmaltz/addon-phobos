@@ -2913,10 +2913,17 @@ class DefineSubmodel(Operator):
         name="Version name", description="Name of the submodel version", default='1.0'
     )
 
+    def _submodeltype_items(self, context):
+        items = defs.definitions.get('submodeltypes', {})
+        if items:
+            return [(sub,) * 3 for sub in items]
+        # Fallback to a safe default to avoid registration errors.
+        return [("mechanism",) * 3]
+
     submodeltype : EnumProperty(
-        items=tuple([(sub,) * 3 for sub in defs.definitions['submodeltypes']]),
+        items=_submodeltype_items,
         name="Submodel type",
-        default="mechanism",
+        default=0,
         description="The type for the new submodel",
     )
 

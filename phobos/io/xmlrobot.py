@@ -27,7 +27,8 @@ class XMLRobot(Representation):
                  materials: List[representation.Material] = None,
                  transmissions: List[representation.Transmission] = None,
                  sensors=None, motors=None, plugins=None, root=None,
-                 is_human=False, urdf_version=None, xmlfile=None, _xmlfile=None):
+                 is_human=False, urdf_version=None, xmlfile=None, _xmlfile=None,
+                 sensors_that_dont_belong_to_links_or_joints=None, **kwargs):
         self._related_robot_instance = self
         super().__init__()
         self.joints = []
@@ -68,6 +69,9 @@ class XMLRobot(Representation):
         self.motors = motors if motors is not None else []
         if plugins is not None:
             self.motors += [m for m in _plural(plugins) if isinstance(m, representation.Motor)]
+        if sensors_that_dont_belong_to_links_or_joints is not None:
+            # Accept legacy/new parser field and merge into sensors list.
+            self.sensors_that_dont_belong_to_links_or_joints = sensors_that_dont_belong_to_links_or_joints
 
         if is_human:
             self.annotate_as_human()
@@ -131,6 +135,10 @@ class XMLRobot(Representation):
                 joint.origin.relative_to = parent if parent is not None else self.get_root().name
         for entity in self.links + self.joints + self.motors + self.sensors + self.materials:
             entity.link_with_robot(self, check_linkage_later=True)
+        # Sensors can be added while linking links (e.g., SDF link sensors); ensure they get linked too.
+        for sensor in self.sensors:
+            if sensor._related_robot_instance is None:
+                sensor.link_with_robot(self, check_linkage_later=True)
         if not check_linkage_later:
             assert self.check_linkage()
 
